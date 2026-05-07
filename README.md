@@ -4,7 +4,6 @@ KeeperFX with one new room and two new creatures.
 # New Room - The Arena
 The Arena allows you to go beyond lvl 10 to a maximum of lvl 12 (5% bonus stats from lvl 10, to make it not OP).
 Place 2 creatures in the pit and they will fight each other. The highest level creature will win the fight and gain one level, going beyond 10.
-
 The fight results in the weaker creature's death.
 
 Zombies and Imps can not fight in the arena.
