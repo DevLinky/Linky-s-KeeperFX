@@ -9,7 +9,7 @@ The fight results in the weaker creature's death.
 # New Creatures - The Zombie & The Salamender
 - The Zombie
   
-Attracted to graveyards, like vampires (33% chance to spawn zombie, 66% for vampire), zombies are not particularily strong. They are weak, lacking both damage and health.
+Attracted to graveyards (33% chance to spawn zombie, 66% vampire), zombies are not particularily strong. They are weak, lacking both damage and health.
 But once defeated, their corpses do not rot like other creatures, zombies will come back to life (that's what zombies do, right?).
 
 - The Salamender
