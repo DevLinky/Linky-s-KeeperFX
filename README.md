@@ -1,5 +1,5 @@
 # Linky-s-KeeperFX
-KeeperFX with one new room and two new creature.
+KeeperFX with one new room and two new creatures.
 
 # New Room - The Arena
 The Arena allows you to go beyond lvl 10 to a maximum of lvl 12 (5% bonus stats from lvl 10, to make it not OP).
