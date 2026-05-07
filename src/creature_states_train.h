@@ -30,12 +30,17 @@ extern "C" {
 #pragma pack(1)
 
 struct Thing;
+struct Room;
 
 #pragma pack()
 /******************************************************************************/
 short at_training_room(struct Thing *thing);
 short training(struct Thing *thing);
+short at_arena_room(struct Thing *thing);
+short arena_duel(struct Thing *thing);
 TbBool creature_can_be_trained(const struct Thing *thing);
+TbBool creature_can_do_arena(const struct Thing *thing);
+long count_creatures_working_in_arena_room(const struct Room *room);
 TbBool player_can_afford_to_train_creature(const struct Thing *thing);
 /******************************************************************************/
 #ifdef __cplusplus

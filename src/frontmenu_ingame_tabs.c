@@ -1850,7 +1850,16 @@ void gui_area_experience_button(struct GuiButton *gbtn)
         struct CreatureModelConfig* crconf = creature_stats_get_from_thing(ctrltng);
         struct CreatureControl* cctrl = creature_control_get_from_thing(ctrltng);
         long points_progress = cctrl->exp_points;
-        long points_required = (crconf->to_level[cctrl->exp_level] << 8);
+        long points_required;
+        if (cctrl->exp_level < CREATURE_NORMAL_MAX_LEVEL - 1)
+        {
+            points_required = (crconf->to_level[cctrl->exp_level] << 8);
+        }
+        else
+        {
+            points_progress = 0;
+            points_required = 1;
+        }
         gui_area_progress_bar_med2(gbtn, units_per_px, points_progress, points_required);
         char text[16];
         snprintf(text, sizeof(text), "%d", (int)(cctrl->exp_level + 1));

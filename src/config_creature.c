@@ -198,9 +198,11 @@ const struct NamedCommand creature_graphics_desc[] = {
   {"DROPDEAD",          1+CGI_DropDead    },
   {"DEADSPLAT",         1+CGI_DeadSplat   },
   {"ROAR",              1+CGI_Roar        }, // Was previously GFX18.
+  {"GFX18",             1+CGI_Roar        },
   {"QUERYSYMBOL",       1+CGI_QuerySymbol }, // Icon
   {"HANDSYMBOL",        1+CGI_HandSymbol  }, // Icon
   {"PISS",              1+CGI_Piss        }, // Was previously GFX21.
+  {"GFX21",             1+CGI_Piss        },
   {"CASTSPELL",         1+CGI_CastSpell   },
   {"RANGEDATTACK",      1+CGI_RangedAttack},
   {"CUSTOM",            1+CGI_Custom      },
@@ -2212,7 +2214,7 @@ const char *creature_instance_code_name(CrInstance inst_id)
 struct CreatureJobConfig *get_config_for_job(CreatureJob job_flags)
 {
     long i = 0;
-    unsigned long k = job_flags;
+    CreatureJob k = job_flags;
     while (k)
     {
         k >>= 1;

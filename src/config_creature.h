@@ -95,10 +95,10 @@ enum CreatureModelFlags {
 #define Job_TAKE_FEED           (1LL << 21)
 #define Job_TAKE_SLEEP          (1LL << 22)
 //TODO Nonexisting - TO ADD LATER - digger jobs
-#define Job_MINE                (1LL << 23)
-#define Job_CONVERT_GROUND      (1LL << 24)
-#define Job_IMPROVE_GROUND      (1LL << 25)
-#define Job_REINFORCE_WALL      (1LL << 26)
+#define Job_MINE                (1LL << 42)
+#define Job_CONVERT_GROUND      (1LL << 43)
+#define Job_IMPROVE_GROUND      (1LL << 44)
+#define Job_REINFORCE_WALL      (1LL << 45)
 //TODO Nonexisting - TO ADD LATER - anger jobs
 #define Job_KILL_OWN_CREATURE   (1LL << 27)
 #define Job_DESTROY_OWN_ROOM    (1LL << 28)
@@ -115,6 +115,7 @@ enum CreatureModelFlags {
 #define Job_STEAL_GOLD          (1LL << 38)
 #define Job_STEAL_SPELLS        (1LL << 39)
 #define Job_DEFEND_PARTY        (1LL << 40)
+#define Job_ARENA               (1LL << 23)
 
 enum JobKindFlags {
     JoKF_None                   = 0x00000000,

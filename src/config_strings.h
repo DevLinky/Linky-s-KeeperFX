@@ -458,6 +458,9 @@ enum GUIStrings {
     GUIStr_TeleportLastWorkroom,
     GUIStr_TeleportCallToArms,
     GUIStr_TeleportDefault,
+    GUIStr_Arena,
+    GUIStr_ArenaDesc,
+    GUIStr_Zombie,
     GuiStrEnd
 };
 

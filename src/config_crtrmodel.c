@@ -231,6 +231,7 @@ const struct NamedCommand creatmodel_jobs_commands[] = {
 
 const struct NamedCommand creatmodel_sounds_commands[] = {
   {"HIT",                  CrSnd_Hit},
+  {"HURT",                 CrSnd_Hit},
   {"HAPPY",                CrSnd_Happy},
   {"SAD",                  CrSnd_Sad},
   {"HANG",                 CrSnd_Hang},

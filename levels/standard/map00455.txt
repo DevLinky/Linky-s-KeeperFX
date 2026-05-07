@@ -14,6 +14,11 @@ REM ****************************************************************************
 REM Brief: This is a tower defense level. The player has to dig a path towards the heroes which will then continue to stream in. The workshop is to be used to survive the level. After enough time is passed a graveyard becomes available, and when the player has enough vampires the level can be completed.
 
 LEVEL_VERSION(1)
+ADD_CREATURE_TO_POOL(ZOMBIE,10)
+CREATURE_AVAILABLE(ALL_PLAYERS,ZOMBIE,1,0)
+ADD_CREATURE_TO_POOL(SALAMANDER,10)
+CREATURE_AVAILABLE(ALL_PLAYERS,SALAMANDER,1,0)
+ROOM_AVAILABLE(ALL_PLAYERS,ARENA,1,1)
 SET_GENERATE_SPEED(600)
 START_MONEY(PLAYER0,10000)
 MAX_CREATURES(PLAYER0,20)

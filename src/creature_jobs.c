@@ -55,6 +55,7 @@
 /******************************************************************************/
 TbBool creature_can_do_job_always_for_player(const struct Thing *creatng, PlayerNumber plyr_idx, CreatureJob new_job);
 TbBool creature_can_do_training_for_player(const struct Thing *creatng, PlayerNumber plyr_idx, CreatureJob new_job);
+TbBool creature_can_do_arena_for_player(const struct Thing *creatng, PlayerNumber plyr_idx, CreatureJob new_job);
 TbBool creature_can_do_research_for_player(const struct Thing *creatng, PlayerNumber plyr_idx, CreatureJob new_job);
 TbBool creature_can_do_manufacturing_for_player(const struct Thing *creatng, PlayerNumber plyr_idx, CreatureJob new_job);
 TbBool creature_can_do_scavenging_for_player(const struct Thing *creatng, PlayerNumber plyr_idx, CreatureJob new_job);
@@ -70,6 +71,7 @@ TbBool attempt_job_in_state_internal_for_player(struct Thing *creatng, PlayerNum
 TbBool creature_can_do_job_always_near_pos(const struct Thing *creatng, MapSubtlCoord stl_x, MapSubtlCoord stl_y, CreatureJob new_job, unsigned long flags);
 TbBool creature_can_do_research_near_pos(const struct Thing *creatng, MapSubtlCoord stl_x, MapSubtlCoord stl_y, CreatureJob new_job, unsigned long flags);
 TbBool creature_can_do_training_near_pos(const struct Thing *creatng, MapSubtlCoord stl_x, MapSubtlCoord stl_y, CreatureJob new_job, unsigned long flags);
+TbBool creature_can_do_arena_near_pos(const struct Thing *creatng, MapSubtlCoord stl_x, MapSubtlCoord stl_y, CreatureJob new_job, unsigned long flags);
 TbBool creature_can_do_manufacturing_near_pos(const struct Thing *creatng, MapSubtlCoord stl_x, MapSubtlCoord stl_y, CreatureJob new_job, unsigned long flags);
 TbBool creature_can_do_scavenging_near_pos(const struct Thing *creatng, MapSubtlCoord stl_x, MapSubtlCoord stl_y, CreatureJob new_job, unsigned long flags);
 TbBool creature_can_place_in_vault_near_pos(const struct Thing *creatng, MapSubtlCoord stl_x, MapSubtlCoord stl_y, CreatureJob new_job, unsigned long flags);
@@ -90,7 +92,8 @@ const struct NamedCommand creature_job_player_check_func_type[] = {
   {"can_freeze_prisoners",     6},
   {"can_join_fight",           7},
   {"can_do_barracking",        8},
-  {"none",                     9},
+  {"can_do_arena",             9},
+  {"none",                    10},
   {NULL,                       0},
 };
 
@@ -104,6 +107,7 @@ Creature_Job_Player_Check_Func creature_job_player_check_func_list[] = {
   creature_can_freeze_prisoners_for_player,
   creature_can_join_fight_for_player,
   creature_can_do_barracking_for_player,
+  creature_can_do_arena_for_player,
   NULL,
   NULL,
 };
@@ -136,7 +140,8 @@ const struct NamedCommand creature_job_coords_check_func_type[] = {
   {"can_place_in_vault",       6},
   {"can_take_salary",          7},
   {"can_take_sleep",           8},
-  {"none",                     9},
+  {"can_do_arena",             9},
+  {"none",                    10},
   {NULL,                       0},
 };
 
@@ -150,6 +155,7 @@ Creature_Job_Coords_Check_Func creature_job_coords_check_func_list[] = {
   creature_can_place_in_vault_near_pos,
   creature_can_take_salary_near_pos,
   creature_can_take_sleep_near_pos,
+  creature_can_do_arena_near_pos,
   NULL,
   NULL,
 };
@@ -561,6 +567,11 @@ TbBool creature_can_do_training_for_player(const struct Thing *creatng, PlayerNu
     return creature_can_be_trained(creatng) && player_can_afford_to_train_creature(creatng);
 }
 
+TbBool creature_can_do_arena_for_player(const struct Thing *creatng, PlayerNumber plyr_idx, CreatureJob new_job)
+{
+    return creature_can_do_arena(creatng);
+}
+
 TbBool creature_can_do_research_for_player(const struct Thing *creatng, PlayerNumber plyr_idx, CreatureJob new_job)
 {
     return creature_can_do_research(creatng);
@@ -807,6 +818,16 @@ TbBool creature_can_do_training_near_pos(const struct Thing *creatng, MapSubtlCo
     if (!creature_can_be_trained(creatng)) {
         return false;
     }
+    return true;
+}
+
+TbBool creature_can_do_arena_near_pos(const struct Thing *creatng, MapSubtlCoord stl_x, MapSubtlCoord stl_y, CreatureJob new_job, unsigned long flags)
+{
+    if (!creature_can_do_arena(creatng))
+        return false;
+    const struct Room* room = subtile_room_get(stl_x, stl_y);
+    if (room_is_invalid(room))
+        return false;
     return true;
 }
 

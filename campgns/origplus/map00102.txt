@@ -14,6 +14,11 @@ REM the Free Software Foundation; either version 2 of the License, or
 REM (at your option) any later version.
 REM ****************************************************************************
 LEVEL_VERSION(1)
+ADD_CREATURE_TO_POOL(ZOMBIE,10)
+CREATURE_AVAILABLE(ALL_PLAYERS,ZOMBIE,1,0)
+ADD_CREATURE_TO_POOL(SALAMANDER,10)
+CREATURE_AVAILABLE(ALL_PLAYERS,SALAMANDER,1,0)
+ROOM_AVAILABLE(ALL_PLAYERS,ARENA,1,1)
 RUN_AFTER_VICTORY(1)
 
 START_MONEY(PLAYER0,120000)

@@ -1176,7 +1176,7 @@ void draw_mini_things_in_hand(long x, long y)
             if (spr_idx > 0)
             {
                 struct CreatureControl *cctrl = creature_control_get_from_thing(thing);
-                int expspr_idx = GBS_creature_flower_level_01 + cctrl->exp_level;
+                int expspr_idx = get_creature_flower_level_sprite_idx(cctrl->exp_level);
                 if (irow > 0)
                     shift_y = 40;
                 else

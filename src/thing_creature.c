@@ -4889,7 +4889,7 @@ TbBool creature_increase_level(struct Thing *thing)
     if (dungeon->creature_max_level[thing->model] > cctrl->exp_level)
     {
         struct CreatureModelConfig *crconf = creature_stats_get_from_thing(thing);
-        if ((cctrl->exp_level < CREATURE_MAX_LEVEL - 1) || (crconf->grow_up != 0))
+        if ((cctrl->exp_level < CREATURE_NORMAL_MAX_LEVEL - 1) || (crconf->grow_up != 0))
         {
             cctrl->exp_level_up = true;
             return true;
@@ -4915,7 +4915,7 @@ TbBool creature_change_multiple_levels(struct Thing *thing, int count)
             if (dungeon->creature_max_level[thing->model] > cctrl->exp_level)
             {
                 struct CreatureModelConfig* crconf = creature_stats_get_from_thing(thing);
-                if ((cctrl->exp_level < CREATURE_MAX_LEVEL - 1) || (crconf->grow_up != 0))
+                if ((cctrl->exp_level < CREATURE_NORMAL_MAX_LEVEL - 1) || (crconf->grow_up != 0))
                 {
                     cctrl->exp_level_up = true;
                     update_creature_levels(thing);
@@ -6273,7 +6273,7 @@ long update_creature_levels(struct Thing *thing)
     lua_on_level_up(thing);
 
     // If a creature is not on highest level, just update the level.
-    if (cctrl->exp_level+1 < CREATURE_MAX_LEVEL)
+    if (cctrl->exp_level+1 < CREATURE_NORMAL_MAX_LEVEL)
     {
         remove_creature_score_from_owner(thing); // the opposite is in set_creature_level()
         set_creature_level(thing, cctrl->exp_level+1);

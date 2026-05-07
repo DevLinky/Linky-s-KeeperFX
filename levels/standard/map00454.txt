@@ -17,6 +17,11 @@ REM To stop the hero attacks the player has to kill blue first, but he is too we
 REM needs to navigate hidden caves to attack blue from behind and continue to kill hero stronghold. Undead can't be used, prisoners need food.
 
 LEVEL_VERSION(1)
+ADD_CREATURE_TO_POOL(ZOMBIE,10)
+CREATURE_AVAILABLE(ALL_PLAYERS,ZOMBIE,1,0)
+ADD_CREATURE_TO_POOL(SALAMANDER,10)
+CREATURE_AVAILABLE(ALL_PLAYERS,SALAMANDER,1,0)
+ROOM_AVAILABLE(ALL_PLAYERS,ARENA,1,1)
 SET_GENERATE_SPEED(900)
 START_MONEY(PLAYER0,5000)
 START_MONEY(PLAYER1,250000)

@@ -5863,3 +5863,18 @@ msgid "Teleport Default"
 msgstr ""
 
 
+
+#: guitext:1110
+msgctxt "Room name"
+msgid "Arena"
+msgstr ""
+
+#: guitext:1111
+msgctxt "Room description"
+msgid "Arena: Drop two selected creatures here to duel. The higher-level winner gains two levels."
+msgstr ""
+
+#: guitext:1112
+msgctxt "Creature name"
+msgid "Zombie"
+msgstr ""

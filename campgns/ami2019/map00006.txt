@@ -8,6 +8,11 @@ REM 14-Nov-2020
 REM ****************************************************
 
 LEVEL_VERSION(1)
+ADD_CREATURE_TO_POOL(ZOMBIE,10)
+CREATURE_AVAILABLE(ALL_PLAYERS,ZOMBIE,1,0)
+ADD_CREATURE_TO_POOL(SALAMANDER,10)
+CREATURE_AVAILABLE(ALL_PLAYERS,SALAMANDER,1,0)
+ROOM_AVAILABLE(ALL_PLAYERS,ARENA,1,1)
 REM ********************************************
 REM	aps: 1 small east room; 2 south empty room; 3 monastery; 4 west corridor; 5 insect lair; 6 dungeon heart; 7 imp generator; 8 before heart
 REM hgs: 1 small east room; 2 south lava area; 3 corridor; 4 first tunnel; 5 second tunnel; 6 third tunnel; 7 forth tunnel; 8 fifth tunnel; 9 sixth tunnel; 10 seventh tunnel

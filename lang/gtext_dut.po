@@ -1,4 +1,4 @@
-# ******************************************************************************
+﻿# ******************************************************************************
 #  Free implementation of Bullfrog's Dungeon Keeper strategy game.
 # ******************************************************************************
 #   @file gtext_dut.po
@@ -215,7 +215,7 @@ msgstr ""
 "Dondersteentjes verstevigen de muren om indringers buiten de kerker te "
 "houden. Wil je meer Dondersteentjes, ga dan naar het Onderzoekpaneel, "
 "selecteer het Dondersteen pictogram en klik ergens in je kerker. Elk "
-"Dondersteentje dat je creëert kost meer dan het voorgaande."
+"Dondersteentje dat je creÃ«ert kost meer dan het voorgaande."
 
 #. Level Eversmile information after having few creatures
 #: guitext:16
@@ -281,7 +281,7 @@ msgid ""
 "domain. Remember, each Imp you create is more expensive than the last."
 msgstr ""
 "Je hebt meer Dondersteentjes nodig. Gebruik de spreuk 'DONDERSTEENTJES "
-"CREËREN' om ze te creëren. Vergeet niet dat ieder volgende Dondersteentje "
+"CREÃ‹REN' om ze te creÃ«ren. Vergeet niet dat ieder volgende Dondersteentje "
 "meer kost dan het voorgaande."
 
 #. Level Cosyton information soon after start
@@ -318,7 +318,7 @@ msgid ""
 msgstr ""
 "Vergeet je les van het Zwerenrijk niet. Je moet een Schatkamer, een Hol en "
 "een Broedplaats bouwen en je hebt ook nog een Portaal nodig. Maak je ruimten "
-"minimaal 9 tegels groot om ze efficiënt te kunnen benutten."
+"minimaal 9 tegels groot om ze efficiÃ«nt te kunnen benutten."
 
 #. Level Cosyton objective after basic rooms built
 #: guitext:25
@@ -341,7 +341,7 @@ msgid ""
 "would-be invaders."
 msgstr ""
 "Gun je Dondersteentjes tijd om de muren van je kerker te verstevigen. Dit "
-"verhoogt de efficiëntie van je ruimten en houdt indringers buiten je kerker."
+"verhoogt de efficiÃ«ntie van je ruimten en houdt indringers buiten je kerker."
 
 #. Level Cosyton information after Training Room built
 #: guitext:27
@@ -448,7 +448,7 @@ msgid ""
 "as well as being magically proficient themselves."
 msgstr ""
 "Je nieuwe Bibliotheek trekt wezens aan zoals Tovenaars, die graag spreuken "
-"en kerker-ontwerpen onderzoeken. Deze duivelse magiërs zijn echte boekwurmen "
+"en kerker-ontwerpen onderzoeken. Deze duivelse magiÃ«rs zijn echte boekwurmen "
 "en beschikken zelf ook over magische krachten."
 
 #. Level Waterdream Warm objective after finished building library
@@ -609,7 +609,7 @@ msgstr "Je moet een manier bedenken om de lavarivier over te steken."
 msgctxt "In-game message"
 msgid ""
 "The enemy's Dungeon Heart throbs before you. Assemble your minions nearby "
-"and administer the coup de grâce."
+"and administer the coup de grÃ¢ce."
 msgstr ""
 "Het Hart van de vijandelijke kerker klopt vlak voor je. Verzamel je slaafjes "
 "in de buurt en geef het de genadeslag."
@@ -957,8 +957,8 @@ msgid ""
 "everything under control, because their feeble magical power impresses the "
 "locals. But you're not from these parts..."
 msgstr ""
-"Vier Magiërs heersen over dit rijk en denken alles onder controle te hebben, "
-"omdat ze de bevolking met hun magische krachten snel wisten te beïnvloeden. "
+"Vier MagiÃ«rs heersen over dit rijk en denken alles onder controle te hebben, "
+"omdat ze de bevolking met hun magische krachten snel wisten te beÃ¯nvloeden. "
 "Tja, jij komt niet uit deze streek..."
 
 #. Level Moonbrush Wood objective
@@ -1217,7 +1217,7 @@ msgid ""
 "opportunity to practise unspeakable evil on a massive scale. Go for it, "
 "master."
 msgstr ""
-"Als landen benen hadden, dan zat deze op zijn knieën. De wanhopige bewoners "
+"Als landen benen hadden, dan zat deze op zijn knieÃ«n. De wanhopige bewoners "
 "bereiden een grootse aanval op je kerker voor. Dit is een goede gelegenheid "
 "om onuitgesproken wreedheden op grote schaal te begaan. Ga ervoor, Keeper."
 
@@ -1242,7 +1242,7 @@ msgid ""
 "all of your creatures back to your Dungeon Heart. Let's hope you never need "
 "it."
 msgstr ""
-"De spreuk 'AUDIËNTIE' is ontdekt. Hiermee worden al je wezens direct naar "
+"De spreuk 'AUDIÃ‹NTIE' is ontdekt. Hiermee worden al je wezens direct naar "
 "het Hart van je kerker gestuurd. Hopelijk hoef je deze spreuk nooit te "
 "gebruiken."
 
@@ -1255,7 +1255,7 @@ msgid ""
 msgstr ""
 "Er is nauwelijks plaats voor je omdat Dungeon Keepers strijden om de "
 "toekomst van dit gebied. Het is aan jou om dit meningsverschil voorgoed te "
-"beëindigen."
+"beÃ«indigen."
 
 #. Level Buffy Oak information
 #: guitext:109
@@ -1279,7 +1279,7 @@ msgid ""
 msgstr ""
 "Ziezo, nu heb je een spreuk die zelfs verstevigde muren in stof omzet. De "
 "spreuk is niet goedkoop en de kans bestaat dat je vijanden over dezelfde "
-"magische kracht beschikken. Dit zou wel eens ÚÚn van die vijanden kunnen "
+"magische kracht beschikken. Dit zou wel eens ÃšÃšn van die vijanden kunnen "
 "zijn."
 
 #. Level Sleepiburgh objective
@@ -1316,7 +1316,7 @@ msgctxt "In-game message"
 msgid ""
 "Can you see how vulnerable one of your opponents has become? Then kill him."
 msgstr ""
-"Heb je gemerkt hoe kwetsbaar ÚÚn van je tegenstanders is geworden? Maak hem "
+"Heb je gemerkt hoe kwetsbaar ÃšÃšn van je tegenstanders is geworden? Maak hem "
 "dan af."
 
 #. Level Woodly Rhyme information
@@ -1838,7 +1838,7 @@ msgid ""
 "held captive in this realm, he will serve you for some time to come."
 msgstr ""
 "Die extreem aanstootgevende groep Dwergen die hier rondzwerft, heb je niet "
-"nodig. Probeer wel zoveel mogelijk Galdemonen te werven. Als je de Magiër "
+"nodig. Probeer wel zoveel mogelijk Galdemonen te werven. Als je de MagiÃ«r "
 "bevrijdt die in dit rijk gevangen zit, dan zal hij je trouw dienen."
 
 #: guitext:165
@@ -2446,7 +2446,7 @@ msgstr "Ridder"
 #: guitext:277
 msgctxt "Creature name"
 msgid "Wizard"
-msgstr "Magiër"
+msgstr "MagiÃ«r"
 
 #: guitext:278
 msgctxt "Creature name"
@@ -2720,7 +2720,7 @@ msgid ""
 "View Distance: The amount of dungeon drawn. This directly affects the speed "
 "of the game. LMB toggle."
 msgstr ""
-"Kijk-afstand: De mate waarin de kerker wordt getekend. Dit beïnvloedt de "
+"Kijk-afstand: De mate waarin de kerker wordt getekend. Dit beÃ¯nvloedt de "
 "spelsnelheid. LMK: bladeren. [3.2.2.]"
 
 #: guitext:317
@@ -3224,7 +3224,7 @@ msgstr "MODEM"
 #: guitext:410
 msgctxt "Menu interface item"
 msgid "Serial Menu"
-msgstr "SERIËLE VERBINDING"
+msgstr "SERIÃ‹LE VERBINDING"
 
 #: guitext:411
 msgctxt "Menu interface item"
@@ -3281,7 +3281,7 @@ msgctxt "Dungeon special description"
 msgid ""
 "Resurrect Creature: You may raise one of your fallen minions from the dead."
 msgstr ""
-"Herrijs wezen: Je mag één van je gedode slaafjes terughalen uit de dood."
+"Herrijs wezen: Je mag Ã©Ã©n van je gedode slaafjes terughalen uit de dood."
 
 #: guitext:422
 msgctxt "Dungeon special description"
@@ -3561,7 +3561,7 @@ msgstr "Geen muis geinstalleerd"
 #: guitext:468
 msgctxt "Menu interface item"
 msgid "Define keys"
-msgstr "Toetsen definiëren"
+msgstr "Toetsen definiÃ«ren"
 
 #: guitext:469
 msgctxt "Game controls"
@@ -3931,7 +3931,7 @@ msgstr "Kan Niet Initialiseren"
 #: guitext:542
 msgctxt "Network game message"
 msgid "Unable to create game"
-msgstr "Kan spel niet creëren"
+msgstr "Kan spel niet creÃ«ren"
 
 #: guitext:543
 msgctxt "Network game message"
@@ -4066,7 +4066,7 @@ msgstr "vechten"
 
 #: guitext:568
 msgid "Annoyed"
-msgstr "Geïrriteerd"
+msgstr "GeÃ¯rriteerd"
 
 #: guitext:569
 msgctxt "Keyboard"
@@ -4484,7 +4484,7 @@ msgstr "Wezenbeheersing"
 #: guitext:631
 msgctxt "Keeper spell name"
 msgid "Create Imp"
-msgstr "Dondersteentjes Creëren"
+msgstr "Dondersteentjes CreÃ«ren"
 
 #: guitext:632
 msgctxt "Keeper spell name"
@@ -4499,7 +4499,7 @@ msgstr "Alarmeren"
 #: guitext:634
 msgctxt "Keeper spell name"
 msgid "Hold Audience"
-msgstr "Audiëntie"
+msgstr "AudiÃ«ntie"
 
 #: guitext:635
 msgctxt "Keeper spell name"
@@ -4570,7 +4570,7 @@ msgstr "Wezenbeheersing: Bestuur direct het wezen. LMK: selecteren. [18.1]"
 msgctxt "Keeper spell description"
 msgid "Create Imp: Summon a new Imp anywhere in your dungeon. LMB select."
 msgstr ""
-"Dondersteentjes Creëren: Creëer een Dondersteen in je kerker. LMK: "
+"Dondersteentjes CreÃ«ren: CreÃ«er een Dondersteen in je kerker. LMK: "
 "selecteren."
 
 #: guitext:649
@@ -4605,7 +4605,7 @@ msgid ""
 "Hold Audience: Calls all your creatures to the Dungeon Heart. LMB select. "
 "RMB zoom. [18.8]"
 msgstr ""
-"Audiëntie: Roept al je wezens naar het Hart van de kerker. LMK: selecteren. "
+"AudiÃ«ntie: Roept al je wezens naar het Hart van de kerker. LMK: selecteren. "
 "RMK: inzoomen.[18.8]"
 
 #: guitext:652
@@ -4781,7 +4781,7 @@ msgstr "Nieuw wezen in de kerker"
 #: guitext:681
 msgctxt "Game event name"
 msgid "Creature annoyed"
-msgstr "Wezen geïrriteerd"
+msgstr "Wezen geÃ¯rriteerd"
 
 #: guitext:682
 msgctxt "Game event name"
@@ -4911,7 +4911,7 @@ msgstr "Nieuw wezen in de kerker: LMK: bladeren. RMK: wissen."
 #: guitext:707
 msgctxt "Game event description"
 msgid "Creature is annoyed: LMB toggle. RMB delete."
-msgstr "Wezen geïrriteerd: LMK: bladeren. RMK: wissen."
+msgstr "Wezen geÃ¯rriteerd: LMK: bladeren. RMK: wissen."
 
 #: guitext:708
 msgctxt "Game event description"
@@ -5119,7 +5119,7 @@ msgstr "Gedolven goud"
 #: guitext:743
 msgctxt "Statistic name"
 msgid "Efficiency"
-msgstr "Efficiëntie"
+msgstr "EfficiÃ«ntie"
 
 #: guitext:744
 msgctxt "Statistic name"
@@ -5194,7 +5194,7 @@ msgstr "Kerkergebied"
 #: guitext:758
 msgctxt "Statistic name"
 msgid "Ideas Researched"
-msgstr "Ideeën onderzocht"
+msgstr "IdeeÃ«n onderzocht"
 
 #: guitext:759
 msgctxt "Statistic name"
@@ -5404,7 +5404,7 @@ msgstr "Leugens verteld"
 #: guitext:800
 msgctxt "Statistic name"
 msgid "Creatures Annoyed"
-msgstr "Wezens geïrriteerd"
+msgstr "Wezens geÃ¯rriteerd"
 
 #: guitext:801
 msgctxt "Statistic name"
@@ -5414,7 +5414,7 @@ msgstr "Dodental Mausoleum"
 #: guitext:802
 msgctxt "Statistic name"
 msgid "Vampires Created"
-msgstr "Vampiers gecreëerd"
+msgstr "Vampiers gecreÃ«erd"
 
 #: guitext:803
 msgctxt "Easter egg"
@@ -5537,7 +5537,7 @@ msgstr ""
 #: guitext:823
 msgctxt "Easter egg"
 msgid "Wizard in your dungeon grim? A trap will make short work of him."
-msgstr "Een Magiër in je kerker? Een val is verrassend sterker."
+msgstr "Een MagiÃ«r in je kerker? Een val is verrassend sterker."
 
 #: guitext:824
 msgctxt "Easter egg"
@@ -5625,7 +5625,7 @@ msgid ""
 "Build fast. You'll want the biggest possible welcoming committee ready for "
 "the intruders."
 msgstr ""
-"Bouw snel. Je wilt de indringers met het grootst mogelijke ontvangstcomitÚ "
+"Bouw snel. Je wilt de indringers met het grootst mogelijke ontvangstcomitÃš "
 "begroeten."
 
 #: guitext:836
@@ -5769,7 +5769,7 @@ msgstr "STEM VAN"
 #: guitext:862
 msgctxt "Credits"
 msgid "Finance"
-msgstr "FINANCIËN"
+msgstr "FINANCIÃ‹N"
 
 #: guitext:864
 msgctxt "Credits"
@@ -6137,7 +6137,7 @@ msgid ""
 "Only one Dungeon Keeper can reign victorious over this land. Do not suffer a "
 "humiliating defeat Keeper, the penalty for such failure is torture and death."
 msgstr ""
-"Slechts ÚÚn Dungeon Keeper kan als overwinnaar over dit land heersen. Lijdt "
+"Slechts ÃšÃšn Dungeon Keeper kan als overwinnaar over dit land heersen. Lijdt "
 "geen vernederende nederlaag, Keeper. Falen wordt bestraft met foltering en "
 "de dood."
 
@@ -6272,8 +6272,8 @@ msgid ""
 "Spider and explore the realm. Find the Wizard, kill him and make an example "
 "of his foolishness."
 msgstr ""
-"Een doortrapte MagiÙr heeft je van je magische krachten beroofd. Gebruik je "
-"Spin en verken het rijk. Spoor die MagiÙr op, dood hem en stel hem als "
+"Een doortrapte MagiÃ™r heeft je van je magische krachten beroofd. Gebruik je "
+"Spin en verken het rijk. Spoor die MagiÃ™r op, dood hem en stel hem als "
 "voorbeeld voor zijn domheid."
 
 #. DD Level Dixaroc information after getting Imps
@@ -6326,7 +6326,7 @@ msgid ""
 "Before you lies the Wizard's domain. Defeat him, and you will regain your "
 "powers."
 msgstr ""
-"Voor je ligt het rijk van de MagiÙr. Versla hem en je krijgt je krachten "
+"Voor je ligt het rijk van de MagiÃ™r. Versla hem en je krijgt je krachten "
 "terug."
 
 #. DD Level Dixaroc objective after wizard is dead
@@ -6883,7 +6883,7 @@ msgstr "Sloop-val"
 #: guitext:1037
 msgctxt "Trap description"
 msgid "Demolition Trap: An explosive with unrivalled destructive power."
-msgstr "Sloop-val: Een explosief met ongeëvenaarde vernietigende kracht."
+msgstr "Sloop-val: Een explosief met ongeÃ«venaarde vernietigende kracht."
 
 #: guitext:1038
 msgctxt "Trap description"
@@ -6908,12 +6908,12 @@ msgstr "Geest"
 #: guitext:1042
 msgctxt "Creature name"
 msgid "Druid"
-msgstr "Druïde"
+msgstr "DruÃ¯de"
 
 #: guitext:1043
 msgctxt "Creature name"
 msgid "Time Mage"
-msgstr "Tijdmagiër"
+msgstr "TijdmagiÃ«r"
 
 #: guitext:1044
 msgctxt "Creature name"
@@ -7075,12 +7075,12 @@ msgstr "Helderziendheid: Laat het wezen onzichtbare vijanden zien."
 #: guitext:1072
 msgctxt "Keeper spell name"
 msgid "Recruit Tunneller"
-msgstr "Mol Creëren"
+msgstr "Mol CreÃ«ren"
 
 #: guitext:1073
 msgctxt "Keeper spell description"
 msgid "Recruit Tunneller: Summon a new Tunneller anywhere in your dungeon."
-msgstr "Mol Creëren: Creëer een Mol in je kerker. LMK: selecteren."
+msgstr "Mol CreÃ«ren: CreÃ«er een Mol in je kerker. LMK: selecteren."
 
 #: guitext:1074 guitext:1075
 msgctxt "Unused"
@@ -7252,3 +7252,17 @@ msgctxt "Game controls"
 msgid "Teleport Default"
 msgstr "Teleporteer Standaard"
 
+
+#: guitext:1110
+msgctxt "Room name"
+msgid "Arena"
+msgstr "Arena"
+
+#: guitext:1111
+msgctxt "Room description"
+msgid "Arena: Drop two selected creatures here to duel. The higher-level winner gains two levels."
+msgstr "Arena: Drop two selected creatures here to duel. The higher-level winner gains two levels."
+#: guitext:1112
+msgctxt "Creature name"
+msgid "Zombie"
+msgstr "Zombie"

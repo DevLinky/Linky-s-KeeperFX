@@ -27,7 +27,9 @@
 #include "thing_list.h"
 #include "thing_physics.h"
 #include "thing_effects.h"
+#include "thing_creature.h"
 #include "thing_navigate.h"
+#include "config.h"
 #include "config_terrain.h"
 #include "creature_control.h"
 #include "creature_states.h"
@@ -46,6 +48,57 @@ extern "C" {
 #endif
 /******************************************************************************/
 /******************************************************************************/
+
+#define ZOMBIE_REVIVE_TURNS 2400
+
+static ThingModel get_zombie_creature_model(void)
+{
+    long crmodel = get_id(creature_desc, "ZOMBIE");
+    if (crmodel <= 0)
+        return 0;
+    return crmodel;
+}
+
+static TbBool dead_creature_is_zombie(const struct Thing *thing)
+{
+    ThingModel zombie_model = get_zombie_creature_model();
+    if (zombie_model <= 0)
+        return false;
+    if (!thing_exists(thing))
+        return false;
+    if (thing->class_id != TCls_DeadCreature)
+        return false;
+    return (thing->model == zombie_model);
+}
+
+static TbBool revive_zombie_corpse(struct Thing *thing)
+{
+    if (!creature_count_below_map_limit(0))
+        return false;
+    struct Coord3d pos = thing->mappos;
+    pos.z.val = get_thing_height_at(thing, &pos);
+    struct Thing* newthing = create_creature(&pos, thing->model, thing->owner);
+    if (thing_is_invalid(newthing))
+    {
+        ERRORLOG("Could not revive zombie model %ld", (long)thing->model);
+        return false;
+    }
+    if (thing_in_wall_at(newthing, &pos))
+    {
+        if (!get_nearest_valid_position_for_creature_at(newthing, &pos))
+        {
+            ERRORLOG("Could not find valid revive position for zombie model %ld", (long)thing->model);
+            delete_thing_structure(newthing, 0);
+            return false;
+        }
+        move_thing_in_map(newthing, &pos);
+    }
+    init_creature_level(newthing, thing->corpse.exp_level);
+    set_start_state(newthing);
+    create_effect(&pos, TngEff_Explosion3, newthing->owner);
+    delete_thing_structure(thing, 0);
+    return true;
+}
 
 /**
  *  Returns if given corpse can rot in graveyard.
@@ -124,6 +177,10 @@ TbBool create_vampire_in_room(struct Room *room)
     pos.y.val = 0;
     pos.z.val = 0;
     long crmodel = get_room_create_creature_model(room->kind);
+    long zombie_model = get_zombie_creature_model();
+    if ((zombie_model > 0) && (GAME_RANDOM(3) == 0)) {
+        crmodel = zombie_model;
+    }
     struct Thing* thing = create_creature(&pos, crmodel, room->owner);
     if (thing_is_invalid(thing)) {
         ERRORLOG("Could not create creature model %ld",crmodel);
@@ -136,9 +193,10 @@ TbBool create_vampire_in_room(struct Room *room)
     }
     move_thing_in_map(thing, &pos);
     struct Dungeon* dungeon = get_dungeon(room->owner);
-    dungeon->lvstats.vamps_created++;
+    if (crmodel == get_room_create_creature_model(room->kind))
+        dungeon->lvstats.vamps_created++;
     create_effect(&pos, TngEff_Explosion3, thing->owner);
-    if (is_my_player_number(room->owner)) {
+    if ((crmodel == get_room_create_creature_model(room->kind)) && is_my_player_number(room->owner)) {
         output_message(SMsg_GraveyardMadeVampire, 0);
     }
     return true;
@@ -263,7 +321,14 @@ TngUpdateRet update_dead_creature(struct Thing *thing)
         {
             corpse_age = get_gameturn() - thing->creation_turn;
             #define VANISH_EFFECT_DELAY 60
-            if (((corpse_age > game.conf.rules[thing->owner].creature.body_remains_for) ||(!corpse_is_rottable(thing) && (corpse_age > VANISH_EFFECT_DELAY)))
+            if (dead_creature_is_zombie(thing) && (corpse_age >= ZOMBIE_REVIVE_TURNS)
+                && !(is_thing_directly_controlled(thing) || is_thing_passenger_controlled(thing)))
+            {
+                if (revive_zombie_corpse(thing))
+                    return TUFRet_Deleted;
+            } else
+            if (!dead_creature_is_zombie(thing)
+                && ((corpse_age > game.conf.rules[thing->owner].creature.body_remains_for) ||(!corpse_is_rottable(thing) && (corpse_age > VANISH_EFFECT_DELAY)))
                 && !(is_thing_directly_controlled(thing) || is_thing_passenger_controlled(thing)))
             {
                 delete_corpse(thing);

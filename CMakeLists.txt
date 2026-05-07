@@ -37,18 +37,22 @@ add_compile_definitions(_CRT_NONSTDC_NO_WARNINGS _CRT_SECURE_NO_WARNINGS)
 
 file(GLOB_RECURSE KEEPERFX_SOURCES_C "src/*.c")
 file(GLOB_RECURSE KEEPERFX_SOURCES_CXX "src/*.cpp")
+list(FILTER KEEPERFX_SOURCES_CXX EXCLUDE REGEX "src/linux\\.cpp$")
 
 # Global definitions for all targets.
 add_compile_definitions("DEBUG=$<IF:$<CONFIG:Debug>,1,0>")
 add_compile_definitions("SPNG_STATIC=1")
+add_compile_definitions("CURL_STATICLIB=1")
 
 # Add two executable targets: keeperfx and keeperfx_hvlog.
 add_executable(keeperfx ${KEEPERFX_SOURCES_C} ${KEEPERFX_SOURCES_CXX})
+target_include_directories(keeperfx PRIVATE ${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/src)
 
 target_compile_definitions(keeperfx PUBLIC BFDEBUG_LEVEL=0)
 target_sources(keeperfx PRIVATE "res/keeperfx_stdres.rc")
 
 add_executable(keeperfx_hvlog ${KEEPERFX_SOURCES_C} ${KEEPERFX_SOURCES_CXX})
+target_include_directories(keeperfx_hvlog PRIVATE ${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/src)
 
 target_compile_definitions(keeperfx_hvlog PUBLIC BFDEBUG_LEVEL=10)
 target_sources(keeperfx_hvlog PRIVATE "res/keeperfx_stdres.rc")
@@ -56,10 +60,11 @@ target_sources(keeperfx_hvlog PRIVATE "res/keeperfx_stdres.rc")
 message(STATUS "We are using ${CMAKE_CXX_COMPILER_ID}")
 
 # The default bfd linker in MinGW is extremely slow. LLVM linker (LLD) is much much faster.
-set_property(TARGET keeperfx PROPERTY LINKER_TYPE LLD)
-set_property(TARGET keeperfx_hvlog PROPERTY LINKER_TYPE LLD)
+# Note: LLD disabled due to path-with-spaces issue in this build environment.
+# set_property(TARGET keeperfx PROPERTY LINKER_TYPE LLD)
+# set_property(TARGET keeperfx_hvlog PROPERTY LINKER_TYPE LLD)
 
-set(WARNFLAGS -Wall -W -Wshadow -Wno-sign-compare -Wno-unused-parameter -Wno-strict-aliasing -Wno-unknown-pragmas -Werror)
+set(WARNFLAGS -Wall -W -Wshadow -Wno-sign-compare -Wno-unused-parameter -Wno-strict-aliasing -Wno-unknown-pragmas -Wno-format-truncation -Wno-unused-but-set-variable -Werror)
 set(GNU_COMPILER_FLAG -march=x86-64 -fno-omit-frame-pointer -fmessage-length=0)
 set(GNU_LINK_FLAG -mwindows -Wl,--enable-auto-import)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wimplicit")
@@ -69,6 +74,20 @@ target_link_options(keeperfx PRIVATE ${GNU_LINK_FLAG} -Wl,-Map,keeperfx.map)
 target_link_options(keeperfx_hvlog PRIVATE ${GNU_LINK_FLAG} -Wl,-Map,keeperfx_hvlog.map)
 target_link_libraries (keeperfx PUBLIC -static stdc++ winpthread -dynamic)
 target_link_libraries (keeperfx_hvlog PUBLIC -static stdc++ winpthread -dynamic)
+
+if (MINGW)
+    get_filename_component(MINGW_BIN_DIR "${CMAKE_CXX_COMPILER}" DIRECTORY)
+    foreach (target keeperfx keeperfx_hvlog)
+        foreach (runtime_dll libgcc_s_dw2-1.dll libwinpthread-1.dll libstdc++-6.dll libopenal-1.dll libmysofa.dll zlib1.dll)
+            if (EXISTS "${MINGW_BIN_DIR}/${runtime_dll}")
+                add_custom_command(TARGET ${target} POST_BUILD
+                    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                        "${MINGW_BIN_DIR}/${runtime_dll}"
+                        "$<TARGET_FILE_DIR:${target}>/${runtime_dll}")
+            endif ()
+        endforeach ()
+    endforeach ()
+endif ()
 
 # System libraries.
 target_link_libraries(keeperfx PRIVATE imagehlp dbghelp)

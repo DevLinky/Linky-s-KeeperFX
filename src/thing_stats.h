@@ -26,7 +26,8 @@
 extern "C" {
 #endif
 /******************************************************************************/
-#define CREATURE_MAX_LEVEL      10
+#define CREATURE_NORMAL_MAX_LEVEL 10
+#define CREATURE_MAX_LEVEL      12
 #define LEARNED_INSTANCES_COUNT 10
 
 enum CreatureLiveStatistics {

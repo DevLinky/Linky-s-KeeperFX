@@ -15,6 +15,11 @@ REM ****************************************************************************
 REM Brief: Player has direct contact with 3 rival keepers with a head start and it would be wise to make them attack each other. When one dies the other two will join forces. And unless there's a swift victory, some heroes will show up just when things are starting to go well for the player.
 
 LEVEL_VERSION(1)
+ADD_CREATURE_TO_POOL(ZOMBIE,10)
+CREATURE_AVAILABLE(ALL_PLAYERS,ZOMBIE,1,0)
+ADD_CREATURE_TO_POOL(SALAMANDER,10)
+CREATURE_AVAILABLE(ALL_PLAYERS,SALAMANDER,1,0)
+ROOM_AVAILABLE(ALL_PLAYERS,ARENA,1,1)
 
 SET_GENERATE_SPEED(550)
 MAX_CREATURES(ALL_PLAYERS,17)

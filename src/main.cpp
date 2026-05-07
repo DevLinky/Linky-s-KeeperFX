@@ -4069,6 +4069,10 @@ short process_command_line(unsigned short argc, char *argv[])
       {
           SoundDisabled = true;
       } else
+      if (strcasecmp(parstr, "sound") == 0)
+      {
+          SoundDisabled = false;
+      } else
       if (strcasecmp(parstr, "fps") == 0)
       {
           narg++;

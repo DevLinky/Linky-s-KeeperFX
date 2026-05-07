@@ -1,4 +1,4 @@
-# *****************************************************************************
+﻿# *****************************************************************************
 #  Free implementation of Bullfrog's Dungeon Keeper strategy game.
 # *****************************************************************************
 #   @file gtext_lat.po
@@ -614,7 +614,7 @@ msgstr ""
 msgctxt "In-game message"
 msgid ""
 "The enemy's Dungeon Heart throbs before you. Assemble your minions nearby "
-"and administer the coup de grâce."
+"and administer the coup de grÃ¢ce."
 msgstr ""
 "Cor roboris inimici ante te vibrat. Conveni prope creaturas tuas et "
 "administra plagam mortiferam misericordem."
@@ -1286,7 +1286,7 @@ msgstr ""
 #: guitext:112
 msgctxt "In-game message"
 msgid "Your continued success makes me sick. Thank you, your wickedness."
-msgstr "Tuo successu continuo aeger fio. Gratias tibi ago, vīlissime."
+msgstr "Tuo successu continuo aeger fio. Gratias tibi ago, vÄ«lissime."
 
 #. Level Woodly Rhyme objective
 #: guitext:113
@@ -7282,3 +7282,17 @@ msgctxt "Game controls"
 msgid "Teleport Default"
 msgstr "Translatio Praedefinita"
 
+
+#: guitext:1110
+msgctxt "Room name"
+msgid "Arena"
+msgstr "Arena"
+
+#: guitext:1111
+msgctxt "Room description"
+msgid "Arena: Drop two selected creatures here to duel. The higher-level winner gains two levels."
+msgstr "Arena: Drop two selected creatures here to duel. The higher-level winner gains two levels."
+#: guitext:1112
+msgctxt "Creature name"
+msgid "Zombie"
+msgstr "Zombie"

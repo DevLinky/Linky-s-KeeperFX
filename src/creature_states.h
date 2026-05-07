@@ -188,6 +188,8 @@ enum CreatureStates {
     CrSt_GoodWanderToObjectCombat,
     CrSt_CreatureDropBodyInLair,
     CrSt_CreatureSaveUnconsciousCreature,
+    CrSt_AtArenaRoom,
+    CrSt_ArenaDuel,
     CrSt_ListEnd,
 };
 

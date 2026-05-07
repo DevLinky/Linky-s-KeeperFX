@@ -199,9 +199,28 @@ enum GUIButtonSprite {
     GBS_borders_frame_thck_ml = 212,
     GBS_borders_frame_thck_mr = 213,
     GBS_creature_portrait_avatr = 214,
+    GBS_creature_flower_level_11 = 239,
+    GBS_creature_flower_level_12 = 240,
 
-    GUI_BUTTON_SPRITES_COUNT = 239,
+    GUI_BUTTON_SPRITES_COUNT = 241,
 };
+
+static inline int get_creature_flower_level_sprite_idx(int exp_level)
+{
+    if (exp_level < 0)
+    {
+        exp_level = 0;
+    }
+    if (exp_level < 10)
+    {
+        return GBS_creature_flower_level_01 + exp_level;
+    }
+    if (exp_level == 10)
+    {
+        return GBS_creature_flower_level_11;
+    }
+    return GBS_creature_flower_level_12;
+}
 
 // Based on gui2-64/filelist_gui2.txt
 enum GUIPanelSprite {

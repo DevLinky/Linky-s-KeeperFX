@@ -5326,7 +5326,7 @@ void draw_status_sprites(long scrpos_x, long scrpos_y, struct Thing *thing)
     health_spridx = 0;
     state_spridx = 0;
 
-    CrtrExpLevel exp_level = min(cctrl->exp_level, 9);
+    short exp_spridx = get_creature_flower_level_sprite_idx(cctrl->exp_level);
     if (cam->view_mode != PVM_ParchmentView)
     {
         fill_status_sprite_indexes(thing, cctrl, &health_spridx, &state_spridx, &anger_spridx);
@@ -5436,7 +5436,7 @@ void draw_status_sprites(long scrpos_x, long scrpos_y, struct Thing *thing)
                 h = (base_size * spr->SHeight * bs_units_per_px / 16) >> 13;
                 LbSpriteDrawScaled(scrpos_x - w / 2, scrpos_y - h - h_add, spr, w, h);
             }
-            spr = get_button_sprite(GBS_creature_flower_level_01 + exp_level);
+            spr = get_button_sprite(exp_spridx);
             w = (base_size * spr->SWidth * bs_units_per_px / 16) >> 13;
             h = (base_size * spr->SHeight * bs_units_per_px / 16) >> 13;
             LbSpriteDrawScaled(scrpos_x - w / 2, scrpos_y - h - h_add, spr, w, h);

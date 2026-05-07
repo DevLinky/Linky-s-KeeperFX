@@ -11,6 +11,11 @@ REM Update 1.00, august 2018: adjusted difficulty.
 REM Lowered maximal amounts of troops, wizards and fairies in particular are limited to 3 each.
 REM ********************************************
 LEVEL_VERSION(1)
+ADD_CREATURE_TO_POOL(ZOMBIE,10)
+CREATURE_AVAILABLE(ALL_PLAYERS,ZOMBIE,1,0)
+ADD_CREATURE_TO_POOL(SALAMANDER,10)
+CREATURE_AVAILABLE(ALL_PLAYERS,SALAMANDER,1,0)
+ROOM_AVAILABLE(ALL_PLAYERS,ARENA,1,1)
 
 SET_PLAYER_COLOR(PLAYER0,WHITE)
 SET_PLAYER_COLOR(PLAYER_GOOD,RED)

@@ -1,7 +1,7 @@
-﻿REM ****************************************************************************
+REM ****************************************************************************
 REM  Campaigns Consolidation Project for KeeperFX strategy game.
 REM ****************************************************************************
-REM  Script for Level Okehazama (桶狭間)
+REM  Script for Level Okehazama (???)
 REM  Named Tub vulnerabilities on previous versions
 REM  Campaign: Twin Keepers
 REM  Authors:  Original author unknown
@@ -16,6 +16,11 @@ REM    (at your option) any later version.
 REM ****************************************************************************
 
 LEVEL_VERSION(1)
+ADD_CREATURE_TO_POOL(ZOMBIE,10)
+CREATURE_AVAILABLE(ALL_PLAYERS,ZOMBIE,1,0)
+ADD_CREATURE_TO_POOL(SALAMANDER,10)
+CREATURE_AVAILABLE(ALL_PLAYERS,SALAMANDER,1,0)
+ROOM_AVAILABLE(ALL_PLAYERS,ARENA,1,1)
 
 START_MONEY(PLAYER0,10000)
 START_MONEY(PLAYER1,10000)

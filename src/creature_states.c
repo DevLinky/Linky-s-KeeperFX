@@ -302,6 +302,8 @@ const struct NamedCommand process_func_commands[] = {
     {"good_arrived_at_attack_dungeon_heart",       134},
     {"creature_drop_unconscious_in_lair",          135},
     {"creature_save_unconscious_creature",         136},
+    {"at_arena_room",                              137},
+    {"arena_duel",                                 138},
     {NULL,                                           0},
 };
 
@@ -443,6 +445,8 @@ const CreatureStateFunc1 process_func_list[] = {
     good_arrived_at_attack_dungeon_heart,
     creature_drop_unconscious_in_lair,
     creature_save_unconscious_creature,
+    at_arena_room,
+    arena_duel,
 };
 
 const struct NamedCommand cleanup_func_commands[] = {
@@ -3239,6 +3243,12 @@ short creature_unconscious(struct Thing *creatng)
     {
         return 0;
     }
+    struct Room* room = get_room_thing_is_on(creatng);
+    if (!room_is_invalid(room) && room_role_matches(room->kind, RoRoF_CrArena))
+    {
+        kill_creature(creatng, INVALID_THING, -1, CrDed_NoUnconscious);
+        return -1;
+    }
     make_creature_conscious(creatng);
     return 1;
 }
@@ -4817,16 +4827,24 @@ TbBool check_experience_upgrade(struct Thing *thing)
 {
     struct CreatureControl *cctrl = creature_control_get_from_thing(thing);
     struct CreatureModelConfig *crconf = creature_stats_get_from_thing(thing);
+    struct Dungeon *dungeon = get_dungeon(thing->owner);
+    if (cctrl->exp_level >= dungeon->creature_max_level[thing->model])
+    {
+        return false;
+    }
+    if ((cctrl->exp_level >= CREATURE_NORMAL_MAX_LEVEL - 1) && (crconf->grow_up == 0))
+    {
+        return false;
+    }
     long i = crconf->to_level[cctrl->exp_level] << 8;
     if (cctrl->exp_points < i)
     {
         return false;
     }
     cctrl->exp_points -= i;
-    struct Dungeon *dungeon = get_dungeon(thing->owner);
     if (cctrl->exp_level < dungeon->creature_max_level[thing->model])
     {
-        if ((cctrl->exp_level < CREATURE_MAX_LEVEL - 1) || (crconf->grow_up != 0))
+        if ((cctrl->exp_level < CREATURE_NORMAL_MAX_LEVEL - 1) || (crconf->grow_up != 0))
         {
             cctrl->exp_level_up = true;
         }
@@ -5505,6 +5523,11 @@ void process_person_moods_and_needs(struct Thing *thing)
         return;
     }
     if (creature_is_leaving_and_cannot_be_stopped(thing))
+    {
+        return;
+    }
+    CrtrStateId state = get_creature_state_besides_move(thing);
+    if ((state == CrSt_AtArenaRoom) || (state == CrSt_ArenaDuel))
     {
         return;
     }

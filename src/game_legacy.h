@@ -109,7 +109,7 @@ struct CreaturePool {
 };
 
 struct PerExpLevelValues {
-  unsigned char value[10];
+  unsigned char value[CREATURE_MAX_LEVEL];
 };
 
 struct Configs {

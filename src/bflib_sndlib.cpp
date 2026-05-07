@@ -432,28 +432,6 @@ void load_sound_banks() {
 	g_banks[1] = load_sound_bank(spc_fname);
 }
 
-void print_device_info() {
-	if (alcIsExtensionPresent(nullptr, "ALC_ENUMERATE_ALL_EXT")) {
-		const auto devices = alcGetString(nullptr, ALC_ALL_DEVICES_SPECIFIER);
-		JUSTLOG("Available audio devices:");
-		for (auto device = devices; device[0] != 0; device += strlen(device)) {
-			JUSTLOG("  %s", device);
-		}
-		const auto default_device = alcGetString(nullptr, ALC_DEFAULT_ALL_DEVICES_SPECIFIER);
-		JUSTLOG("Default audio device: %s", default_device);
-	} else if (alcIsExtensionPresent(nullptr, "ALC_ENUMERATION_EXT")) {
-		const auto devices = alcGetString(nullptr, ALC_DEVICE_SPECIFIER);
-		JUSTLOG("Available audio devices:");
-		for (auto device = devices; device[0] != 0; device += strlen(device)) {
-			JUSTLOG("  %s", device);
-		}
-		const auto default_device = alcGetString(nullptr, ALC_DEFAULT_DEVICE_SPECIFIER);
-		JUSTLOG("Default audio device: %s", default_device);
-	} else {
-		// Cannot enumerate devices :(
-	}
-}
-
 Mix_Chunk * g_streamed_sample = nullptr;
 std::mutex g_mix_mutex;
 
@@ -478,6 +456,10 @@ extern "C" void FreeAudio() {
 }
 
 extern "C" void SetSoundMasterVolume(SoundVolume volume) {
+	if (SoundDisabled || !g_openal_device || !g_openal_context) {
+		g_master_volume = volume;
+		return;
+	}
 	try {
 		// Set OpenAL listener gain to maximum so we can split up the mentor speech volume slider from the sound effects volume slider
 		alListenerf(AL_GAIN, 1.0f);
@@ -493,6 +475,9 @@ extern "C" void SetSoundMasterVolume(SoundVolume volume) {
 
 extern "C" void set_music_volume(SoundVolume value) {
 	g_music_volume = value;
+	if (SoundDisabled) {
+		return;
+	}
 	SetRedbookVolume(value);
 	// convert 0..256 to 0..128
 	Mix_VolumeMusic(LbLerp(0, MIX_MAX_VOLUME, float(value) / FULL_LOUDNESS));
@@ -622,7 +607,8 @@ extern "C" TbBool InitAudio(const SoundSettings * settings) {
 			WARNLOG("OpenAL already initialized");
 			return true;
 		}
-		print_device_info();
+		// Device enumeration can crash in some static OpenAL/MinGW runtime combinations
+		// before a device is opened. Opening the default device is enough for startup.
 		ALCdevice_ptr device(alcOpenDevice(nullptr));
 		if (!device) {
 			throw openal_error("Cannot open default audio device");
