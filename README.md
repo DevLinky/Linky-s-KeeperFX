@@ -7,11 +7,11 @@ Place 2 creatures in the pit and they will fight each other. The highest level c
 The fight results in the weaker creature's death.
 
 # New Creatures - The Zombie & The Salamender
-- The Zombie :
+- The Zombie
   
 Attracted to graveyards, like vampires (33% chance to spawn zombie, 66% for vampire), zombies are not particularily strong. They are pretty weak, they lack both damage and health.
 But once defeated, their corpses do not rot like other creatures, zombies will come back to life (that's what zombies do, right?).
 
-- The Salamender :
+- The Salamender
   
 Salamanders are immuned to lava. Additionnaly, they gain experience if their lair is next to lava.
