@@ -3,7 +3,7 @@ KeeperFX with one new room and one new creature.
 
 # New Room - The Arena
 The Arena allows you to go beyond lvl 10 to a maximum of lvl 12 (5% bonus stats from lvl 10, to make it not OP).
-The arena allows you to place 2 creatures in the pit, fighting each other. The highest level creature will win the fight and instantly gain one level, with the ability to go beyond 10.
+The arena allows you to place 2 creatures in the pit, fighting each other. The highest level creature will win the fight and instantly gain one level, going beyond 10.
 The fight resulsts in the weaker creature's death.
 
 # New Creature - The Zombie
