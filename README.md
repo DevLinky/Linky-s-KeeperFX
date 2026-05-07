@@ -1,4 +1,4 @@
-# Linky-s-KeeperFX
+# Linky's KeeperFX
 KeeperFX with one new room and two new creatures.
 
 # New Room - The Arena
